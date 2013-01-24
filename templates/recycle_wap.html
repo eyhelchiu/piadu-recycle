@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<title>垃圾回收点 :: piadu</title>
+<link rel="stylesheet" type="text/css" class="library" href="{{.utils.StaticUrl "js/bootstrap/css/bootstrap.min.css"}}">
+<link rel="stylesheet" type="text/css" class="library" href="{{.utils.StaticUrl "css/wap.css"}}">
+<script type="text/javascript" src="{{.utils.StaticUrl "js/jquery/jquery-1.7.2.min.js"}}"></script>
+<script type="text/javascript" src="{{.utils.StaticUrl "js/province/data.js"}}"></script>
+<script type="text/javascript" src="{{.utils.StaticUrl "js/province/datajs.js"}}"></script>
+<script type="text/javascript" src="{{.utils.StaticUrl "js/province/jquery.jSelectDate.js"}}"></script>
+</head>
+
+<body>
+<div class="wapview">
+	<div class="header">
+		<i class="icon-menu"></i>
+		<i class="icon-star"></i>
+		<div class="title"><b>垃圾回收点</b></div>
+	</div>
+	<div class="content" style="text-align:center;">
+		<form action="" method="GET">
+			<p><select id="province" name="province"></select></p>
+			<p><select id="city" name="city"></select></p>
+			<p><select id="hometown" name="hometown"></select></p>
+			<p class="poster"><input type="submit" class="btn" value="搜索 “垃圾回收点”..." /></p>
+			<p><a href="javascript:;" onclick="geoquery();">附近的“垃圾回收点”？</a></p>
+		</form>
+	</div>
+	<div class="footer" style="position:absolute;bottom:20px;">
+		&copy; 2013 Piadu Team<!--Technology Co.,Ltd--> &nbsp;版权所有
+	</div>
+</div>
+
+<script>
+function getPositionSuccess(position){
+	window.location.href = '/wap/geo?latitude='+position.coords.latitude+'&longitude='+position.coords.longitude;
+}
+
+function getPositionError(error){
+	switch (error.code) {
+		case error.TIMEOUT:
+			alert("连接超时，请重试.");
+			break;
+		case error.PERMISSION_DENIED:
+			alert("您拒绝了使用位置共享服务，查询已取消.");
+			break;
+		case error.POSITION_UNAVAILABLE:
+			alert("亲爱的火星网友，我们暂时无法为您所在的星球提供位置服务.");
+			break;
+	}
+}
+
+function geoquery() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(getPositionSuccess, getPositionError);
+	}
+	else {
+		alert("你的浏览器不支持获取地理位置.");
+	}
+}
+
+jSelectProvince("province", '{{.province}}', "city", '{{.city}}', "hometown", '{{.hometown}}');
+</script>
+
+</body>
+</html>

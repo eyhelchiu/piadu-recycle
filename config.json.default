@@ -1,0 +1,5 @@
+{
+	"port": "8080",
+	"db": "localhost:27017",
+	"db_name": "piadu-recycle"
+}

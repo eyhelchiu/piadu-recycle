@@ -1,0 +1,28 @@
+{{define "Content"}}
+<div style="margin:0 auto;margin-top:100px;width:450px;">
+	<form action="" method="post">
+		<table>
+			<tr><td width="120">Name:</td><td align="left"><input type="text" name="name" value="" /></td></tr>
+			<tr><td>Province:</td><td align="left"><select id="province" name="province"></select></td></tr>
+			<tr><td>City:</td><td align="left"><select id="city" name="city"></select></td></tr>
+			<tr><td>Hometown:</td><td align="left"><select id="hometown" name="hometown"></select></td></tr>
+			<tr><td>Location:</td><td align="left"><input type="text" name="location" value="" /></td></tr>
+			<tr><td>Scope:</td><td align="left"><input type="text" name="scope" value="" /></td></tr>
+			<tr><td>Telephone:</td><td align="left"><input type="text" name="telephone" value="" /></td></tr>
+			<tr><td>Geo_Latitude:</td><td align="left"><input type="text" name="geolatitude" value="" /></td></tr>
+			<tr><td>Geo_Longitude:</td><td align="left"><input type="text" name="geolongitude" value="" /></td></tr>
+			<tr height="80"><td colspan="2" align="right"><input type="submit" class="btn btn-primary" value="Insert into Recycle locations..." /></td></tr>
+		</table>
+	</form>
+</div>
+
+<script type="text/javascript" src="./assets/js/province/data.js"></script>
+<script type="text/javascript" src="./assets/js/province/datajs.js"></script>
+<script type="text/javascript" src="./assets/js/province/jquery.jSelectDate.js"></script>
+
+<script>
+jSelectProvince("province", '', "city", '', "hometown", '');
+</script>
+
+<style>body{background:none;}</style>
+{{end}}

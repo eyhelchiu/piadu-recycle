@@ -1,0 +1,22 @@
+{{define "Content"}}
+<div class="searchwrap">
+	<form action="search" method="get">
+		<select id="province" name="province"></select>
+		<select id="city" name="city"></select>
+		<select id="hometown" name="hometown"></select>
+		<br/><br/><input type="submit" class="btn btn-primary" value="搜索 “垃圾回收点”..." />
+	</form>
+</div>
+
+<script type="text/javascript" src="./assets/js/province/data.js"></script>
+<script type="text/javascript" src="./assets/js/province/datajs.js"></script>
+<script type="text/javascript" src="./assets/js/province/jquery.jSelectDate.js"></script>
+
+<script>
+jSelectProvince("province", '{{.province}}', "city", '{{.city}}', "hometown", '{{.hometown}}');
+</script>
+
+<style>
+body{background:url(./assets/img/bg.jpg) no-repeat;background-size:cover;}
+</style>
+{{end}}

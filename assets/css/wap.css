@@ -1,0 +1,10 @@
+*{margin:0;padding:0;}
+.wapview{width:100%;}
+.header{background:url(../img/wap/bg.png) repeat-x;width:100%;height:100px;}
+.header .icon-menu{margin-left:5px;float:left;width:68px;height:68px;background:url(../img/wap/icon.png) no-repeat;}
+.header .title{margin:0 auto;width:125px;height:68px;line-height:68px;font-size:24px;}
+.header .icon-star{margin-right:5px;float:right;width:68px;height:68px;background:url(../img/wap/icon.png) -68px 0 no-repeat;}
+.content{text-align:left;}
+.content ul{margin:0 10px;}
+.content .poster{line-height:55px;}
+.footer{margin-top:20px;width:100%;height:50px;text-align:center;}
